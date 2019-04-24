@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hmis
+  labels:
+    name: hmis
+    app: iohie
+    component: hmis
+spec:
+  hostname: hmis
+  subdomain: iohie
+  containers:
+  - image: dhis2:2.31
+    name: dhis2
+---
