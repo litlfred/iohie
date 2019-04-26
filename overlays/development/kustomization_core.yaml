@@ -1,6 +1,0 @@
-commonLabels:
-   env: localhost
-   bases:
-   - ../../base
-patches:
-- ?

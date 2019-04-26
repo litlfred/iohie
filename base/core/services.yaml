@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     component: core
+sole
   ports:
   - name: foo
     port: 1234

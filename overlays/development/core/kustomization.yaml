@@ -1,0 +1,6 @@
+commonLabels:
+   env: localhost
+   bases:
+   - ../../../base/core
+patchesStrategicMerge:
+- localservice.yaml
