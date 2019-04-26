@@ -1,5 +1,5 @@
 commonLabels
   app: iohie-core
 resources:
-- services/core.yaml
-- pods/core.yaml
+- services.yaml
+- pods.yaml

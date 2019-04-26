@@ -1,7 +1,8 @@
 commonLabels
   app: iohie-hmis
+base  
 resources:
-- services/core.yaml
-- services/hmis.yaml
-- pods/core.yaml
-- pods/hmis.yaml
+- ../core/services.yaml
+- ../core/pods.yaml
+- pods.yaml
+
