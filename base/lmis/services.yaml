@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sc
+  name: supplychain
 spec:
-  Selector:
+  selector:
     component: supplychain
   ports:
   - name: foo

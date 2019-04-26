@@ -1,0 +1,113 @@
+######################################
+#                                    #
+#     WARNING: DO NOT EDIT           # 
+#                                    #
+# this file is auto-getnerated from  #
+# the build.sh script                #
+#                                    #
+######################################
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: iohie-lmis
+  name: core
+spec:
+  ports:
+  - name: foo
+    port: 1234
+    targetPort: 1234
+  selector:
+    app: iohie-lmis
+    component: core
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: iohie-lmis
+  name: hmis
+spec:
+  ports:
+  - name: foo
+    port: 1234
+    targetPort: 1234
+  selector:
+    app: iohie-lmis
+    component: hmis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: iohie-lmis
+  name: supplychain
+spec:
+  ports:
+  - name: foo
+    port: 1234
+    targetPort: 1234
+  selector:
+    app: iohie-lmis
+    component: supplychain
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: iohie-lmis
+    component: core
+    name: core
+  name: core
+spec:
+  containers:
+  - image: openhim-core:5.2.0
+    name: openhim
+    ports:
+    - containerPort: 8080
+  - image: openhim-console:1.13.0
+    name: console
+    ports:
+    - containerPort: 8081
+  - image: hearth:1.0.0
+    name: metadata
+    ports:
+    - containerPort: 80
+  - image: gofr:1.0.0
+    name: metadata
+    ports:
+    - containerPort: 80
+  hostname: core
+  subdomain: iohie
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: iohie-lmis
+    component: hmis
+    name: hmis
+  name: hmis
+spec:
+  containers:
+  - image: dhis2:2.31
+    name: dhis2
+  hostname: hmis
+  subdomain: iohie
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: iohie-lmis
+    component: lmis
+    name: lmis
+  name: supplychain
+spec:
+  containers:
+  - image: openlmis:3.5.0
+    name: openlmis
+  - image: pcmt:3.5.0
+    name: pcmt
+  hostname: lmis
+  subdomain: iohie

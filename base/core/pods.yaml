@@ -12,18 +12,18 @@ spec:
   containers:
   - image: openhim-core:5.2.0
     name: openhim
-      ports:
-       - containerPort: 8080
+    ports:
+    - containerPort: 8080
   - image: openhim-console:1.13.0
     name: console
-      ports:
-       - containerPort: 8081
+    ports:
+    - containerPort: 8081
   - image: hearth:1.0.0
     name: metadata
-      ports:
-       - containerPort: 80
+    ports:
+    - containerPort: 80
   - image: gofr:1.0.0
     name: metadata
-      ports:
-       - containerPort: 80
+    ports:
+    - containerPort: 80
 ---

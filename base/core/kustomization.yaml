@@ -1,4 +1,4 @@
-commonLabels
+commonLabels:
   app: iohie-core
 resources:
 - services.yaml
